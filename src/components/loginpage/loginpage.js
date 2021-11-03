@@ -33,7 +33,11 @@ const Login = ({ setLoginUser }) => {
   const [showLogoutButton, setShowLogoutButton] = useState(false);
 
   const onLoginSuccess = (res) => {
-    console.log('Login Success', res.profileObj);
+    console.log(res);
+    axios.post("http://localhost:9002/login", 'data').then(res => {
+      console.log("Google login success", res);
+    })
+  
     setShowLoginButton(false);
     setShowLogoutButton(true);
   }
