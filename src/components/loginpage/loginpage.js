@@ -34,7 +34,7 @@ const Login = ({ setLoginUser }) => {
 
   const onLoginSuccess = (res) => {
     console.log(res);
-    axios.post("http://localhost:9002/login", 'data').then(res => {
+    axios.post("http://localhost:9002/login", 'data:tokenId').then(res => {
       console.log("Google login success", res);
     })
   
